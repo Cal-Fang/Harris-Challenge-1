@@ -52,5 +52,6 @@ for i in range(len(ivvy_stations)):
     percentage_rounded = round(percentage, 2)
     ivvy_stations[i]["percent_bikes_remaining"] = "{}%".format(percentage_rounded)
 
+# Just to check how does it go:
 from pprint import pprint
 pprint(ivvy_stations[2])
