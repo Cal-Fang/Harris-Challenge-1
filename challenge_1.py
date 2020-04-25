@@ -16,21 +16,31 @@ ivvy_stations = json.loads(open('divvy_stations.txt').read())
 # PROBLEM 1
 # find average number of empty docks (num_docks_available) and
 # available bikes (num_bikes_available) at all stations in the system
-total_docks = 0
-total_bikes = 0
+total_docks_available = 0
+total_bikes_available = 0
 
 for i in range(len(ivvy_stations)):
-    total_docks = total_docks + ivvy_stations[i]["num_docks_available"]  # iteratively add available docks number of each list together
-    total_bikes = total_bikes + ivvy_stations[i]["num_bikes_available"]  # same logic
+    total_docks_available = total_docks_available + ivvy_stations[i]["num_docks_available"]  # iteratively add available docks number of each list together
+    total_bikes_available = total_bikes_available + ivvy_stations[i]["num_bikes_available"]  # same logic
 
-average_docks = total_docks / len(ivvy_stations)   # average number of empty docks (num_docks_available)
-average_bikes = total_bikes / len(ivvy_stations)   # average number of available bikes (num_bikes_available)
+average_docks_available = total_docks_available / len(ivvy_stations)   # average number of empty docks (num_docks_available)
+average_bikes_available = total_bikes_available / len(ivvy_stations)   # average number of available bikes (num_bikes_available)
 
-print(average_bikes)
-print(average_docks)
+print(average_bikes_available)
+print(average_docks_available)
+
 
 # PROBLEM 2
 # find ratio of bikes that are currently rented to total bikes in the system (ignore ebikes)
+total_bikes_rented = 0
+total_bikes = 0
+
+for i in range(len(ivvy_stations)):
+    total_bikes_rented = total_bikes_rented + ivvy_stations[i]["num_docks_available"]  # Assuming an empty dock means a rented bike
+    total_bikes = total_bikes + + ivvy_stations[i]["num_docks_available"] + ivvy_stations[i]["num_bikes_available"]  # same logic, rented bikes plus available bikes
+
+ratio_rented_to_total = total_bikes_rented / total_bikes
+print(ratio_rented_to_total)
 
 
 # PROBLEM 3
