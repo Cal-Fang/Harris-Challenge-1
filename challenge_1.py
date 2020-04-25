@@ -37,7 +37,7 @@ total_bikes = 0
 
 for i in range(len(ivvy_stations)):
     total_bikes_rented = total_bikes_rented + ivvy_stations[i]["num_docks_available"]  # Assuming an empty dock means a rented bike
-    total_bikes = total_bikes + + ivvy_stations[i]["num_docks_available"] + ivvy_stations[i]["num_bikes_available"]  # same logic, rented bikes plus available bikes equals total bikes number in each station
+    total_bikes = total_bikes + + ivvy_stations[i]["num_docks_available"] + ivvy_stations[i]["num_bikes_available"]  # same logic, rented bikes plus available bikes
 
 ratio_rented_to_total = total_bikes_rented / total_bikes
 print(ratio_rented_to_total)
@@ -47,6 +47,7 @@ print(ratio_rented_to_total)
 # Add a new variable for each divvy station's entry, "percent_bikes_remaining", that shows
 # the percentage of bikes available at each individual station (again ignore ebikes).
 # This variable should be formatted as a percentage rounded to 2 decimal places, e.g. 66.67%
+<<<<<<< HEAD
 for i in range(len(ivvy_stations)):
     percentage = 100 * ivvy_stations[i]["num_bikes_available"] / (ivvy_stations[i]["num_bikes_available"] + ivvy_stations[i]["num_docks_available"]) # rented bikes plus available bikes equals total bikes number in each station
     percentage_rounded = round(percentage, 2)
@@ -55,3 +56,5 @@ for i in range(len(ivvy_stations)):
 # Just to check how does it go:
 from pprint import pprint
 pprint(ivvy_stations[2])
+=======
+>>>>>>> parent of 957436f... Update challenge_1.py
